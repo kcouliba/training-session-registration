@@ -1,8 +1,8 @@
 import React from 'react'
-import { Form } from 'formik'
+import { Form, Field } from 'formik'
 import { string, boolean, object } from 'yup'
 
-import InputField from './InputField'
+import { InputField, TextInputField, DropDownInputField } from './InputField'
 
 export const INITIAL_VALUES = {
   firstName: '',
@@ -34,34 +34,54 @@ export const VALIDATION_SCHEMA = object().shape({
 const InputForm = ({ isSubmitting }) => {
   return (
     <Form>
-      <InputField type="text" name="firstName" label="FirstName" />
-      <InputField type="text" name="lastName" label="LastName" />
-      <InputField type="email" name="email" label="Email" />
-      <InputField type="password" name="password" label="Password" />
-      <InputField
-        type="passwordConfirm"
+      <TextInputField name="firstName" label="FirstName" />
+      <TextInputField name="lastName" label="LastName" />
+      <TextInputField type="email" name="email" label="Email*" />
+      <TextInputField type="password" name="password" label="Password*" />
+      <TextInputField
+        type="password"
         name="passwordConfirm"
-        label="Password confirm"
+        label="Password confirm*"
+        required
       />
-      <InputField as="select" name="status" label="Status">
-        <option value=""></option>
+      <DropDownInputField as="select" name="status" label="Status">
+        <option value="">Select status</option>
         <option value="teacher">teacher</option>
         <option value="teacher_assistant">teacher assistant</option>
         <option value="student">student</option>
+      </DropDownInputField>
+      <InputField name="subscribeNewsletter">
+        <div className="control">
+          <label className="checkbox">
+            <Field
+              className="checkbox"
+              type="checkbox"
+              name="subscribeNewsletter"
+            />
+            Subscribe to newsletter
+          </label>
+        </div>
       </InputField>
-      <InputField
-        type="checkbox"
-        name="subscribeNewsletter"
-        label="Subscribe to newsletter"
-      />
-      <InputField
-        type="checkbox"
-        name="conditionsApproved"
-        label="I have read terms and conditions"
-      />
-      <button type="submit" disabled={isSubmitting}>
-        Submit
-      </button>
+      <InputField name="conditionsApproved">
+        <div className="control">
+          <label className="checkbox">
+            <Field
+              className="checkbox"
+              type="checkbox"
+              name="conditionsApproved"
+            />
+            I have read terms and conditions*
+          </label>
+        </div>
+      </InputField>
+      <div className="level-right">
+        <button
+          className="button is-large is-primary"
+          type="submit"
+          disabled={isSubmitting}>
+          Submit
+        </button>
+      </div>
     </Form>
   )
 }

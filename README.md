@@ -13,3 +13,4 @@
 - [React](https://reactjs.org/)
 - [Formik](https://jaredpalmer.com/formik/)
 - [yup](https://github.com/jquense/yup)
+- [bulma](https://bulma.io/)

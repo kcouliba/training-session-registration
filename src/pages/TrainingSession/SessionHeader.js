@@ -12,11 +12,16 @@ export class SessionHeader extends Component {
     const { name, startDate, endDate } = this.props
 
     return (
-      <div>
-        <p>{name}</p>
-        <p>{startDate}</p>
-        <p>{endDate}</p>
-      </div>
+      <section className="hero is-light is-bold is-medium">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title is-1">{name}</h1>
+            <h2 className="subtitle is-3">
+              From {startDate} to {endDate}
+            </h2>
+          </div>
+        </div>
+      </section>
     )
   }
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 import TrainingSession from './pages/TrainingSession'
+import 'bulma'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <TrainingSession />
     </div>
   )

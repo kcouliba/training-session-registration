@@ -14,7 +14,12 @@ export class TrainingSession extends Component {
           startDate={session.startDate}
           endDate={session.endDate}
         />
-        <RegisterForm />
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <h1 className="title is-size-2">Register</h1>
+            <RegisterForm />
+          </div>
+        </div>
       </>
     )
   }
