@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 
+import SessionHeader from './SessionHeader'
+import RegisterForm from '../../components/RegisterForm'
+
+import session from '../../datasource/training-session.json'
+
 export class TrainingSession extends Component {
   render() {
     return (
       <div>
-        <p>Main page</p>
+        <SessionHeader
+          name={session.name}
+          startDate={session.startDate}
+          endDate={session.endDate}
+        />
+        <RegisterForm onSubmit={values => console.log({ values })} />
       </div>
     )
   }
