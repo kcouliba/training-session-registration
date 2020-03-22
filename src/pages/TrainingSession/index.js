@@ -8,14 +8,14 @@ import session from '../../datasource/training-session.json'
 export class TrainingSession extends Component {
   render() {
     return (
-      <div>
+      <>
         <SessionHeader
           name={session.name}
           startDate={session.startDate}
           endDate={session.endDate}
         />
-        <RegisterForm onSubmit={values => console.log({ values })} />
-      </div>
+        <RegisterForm />
+      </>
     )
   }
 }

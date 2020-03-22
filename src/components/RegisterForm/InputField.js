@@ -2,12 +2,14 @@ import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 
 export const InputField = (props = {}) => {
-  const { type, name, label } = props
+  const { as, type, name, label, children } = props
 
   return (
     <div>
       <label>{label}</label>
-      <Field type={type} name={name} />
+      <Field as={as} type={type} name={name}>
+        {children}
+      </Field>
       <ErrorMessage name={name} component="div" />
     </div>
   )

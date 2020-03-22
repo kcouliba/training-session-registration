@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field, ErrorMessage } from 'formik'
+import { Form } from 'formik'
 import { string, boolean, object } from 'yup'
 
 import InputField from './InputField'
@@ -43,16 +43,12 @@ const InputForm = ({ isSubmitting }) => {
         name="passwordConfirm"
         label="Password confirm"
       />
-      <div>
-        <label>Status</label>
-        <Field as="select" name="status">
-          <option value=""></option>
-          <option value="teacher">teacher</option>
-          <option value="teacher_assistant">teacher assistant</option>
-          <option value="student">student</option>
-        </Field>
-        <ErrorMessage name="status" component="div" />
-      </div>
+      <InputField as="select" name="status" label="Status">
+        <option value=""></option>
+        <option value="teacher">teacher</option>
+        <option value="teacher_assistant">teacher assistant</option>
+        <option value="student">student</option>
+      </InputField>
       <InputField
         type="checkbox"
         name="subscribeNewsletter"
